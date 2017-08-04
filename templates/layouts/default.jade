@@ -1,0 +1,86 @@
+include ../mixins/flash-messages
+include ../mixins/auth/auth-forms
+
+doctype html
+html
+
+	//- HTML HEAD
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+
+		//- Appstore smart banner
+		meta(name="apple-itunes-app", content="app-id=897396382")
+		
+		title= page.title
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(href="/styles/site.min.css", rel="stylesheet")
+		
+		if user && user.canAccessKeystone
+			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+
+		block css
+		block head
+
+	//- HTML BODY
+	body(class=section ? 'sitesection-' + section : null)
+		.site-wrapper.has-sticky-footer
+			
+			//- APP ALERT
+			//- if section == 'home'
+			//- 	include ../includes/layout/app-alert
+
+			//- SITE HEADER
+			include ../includes/layout/header
+			
+			//- SITE BODY
+			block body
+				main.site-body(role='main')
+
+					block intro
+
+					block flash-messages
+						+flash-messages(messages)
+
+					block content
+						
+			//- SITE FOOTER
+			block footer
+				include ../includes/layout/footer
+
+
+		//- MODALS
+		block modal
+		if !user
+			#modal-auth(tabindex="-1", role="dialog", aria-labelledby="signin", aria-hidden="true").modal.fade
+				.modal-dialog
+					.modal-content
+						+auth-forms({ modal: true, initial: 'signin' })
+
+	//- JAVASCRIPT
+	if meetup
+		script.
+			var SydJS = {};
+			SydJS.meetup = !{JSON.stringify(meetup)};
+
+	script(src='/js/lib/jquery/jquery-1.10.2.min.js')
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
+	script(src='/js/lib/bootstrap/collapse.js')
+	script(src='/js/lib/bootstrap/dropdown.js')
+	script(src='/js/lib/bootstrap/modal.js')
+
+	//- Headroom
+	//-script(src="//cdn.jsdelivr.net/headroomjs/0.5.0/headroom.min.js")
+	//-script(src="//cdn.jsdelivr.net/headroomjs/0.5.0/jQuery.headroom.min.js")
+	//-script(src='/js/common/header.js')
+
+	if user && user.canAccessKeystone
+		script(src='/keystone/js/content/editor.js')
+	
+	script(src='/js/ui.js')
+
+	
+	//- ANALYTICS
+	include ../includes/layout/analytics
+	
+	block js

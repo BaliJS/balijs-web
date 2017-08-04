@@ -1,0 +1,68 @@
+// LOGO
+.site-branding {
+	overflow: hidden;
+}
+
+#squared {
+	height: 3rem;
+	width: 3rem;
+
+	@media (min-width: @screen-sm-min) {
+		float: right;
+	}
+}
+
+// HOME PAGE
+// ------------------------------------------------------
+
+.sitesection-home {
+	.header-placeholder {
+		display: none;
+	}
+	.site-body {
+		padding-bottom: 0;
+	}
+}
+
+// About
+// ------------------------------
+
+.home-about {
+	background: url( "/images/group-photo.jpg" ) center bottom no-repeat #f9f9f9;
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	padding-top: 3em;
+	padding-bottom: 18em;
+}
+
+// LINKS
+.home-links {
+	text-align: center;
+	.home-links__heading a {
+		color: @headings-color;
+
+	}
+
+	.link-icon-badge {
+		.square( 90px );
+		border-radius: 50%;
+		display: inline-block;
+		line-height: 90px;
+		text-align: center;
+	}
+	.link-icon {
+		color: @text-color;
+		display: inline-block;
+		font-size: 80px;
+		margin-top: -4px;
+		vertical-align: middle;
+	}
+	@media (min-width: @screen-sm-min) {
+		.link-icon-badge {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}

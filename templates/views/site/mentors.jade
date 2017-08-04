@@ -1,0 +1,34 @@
+extends ../../layouts/default
+
+block intro
+	.page-intro
+		h1 Mentors
+		p.lead The mentors who are part of SydJS. Should you be here? Join us!
+
+block content
+	.page-content: .container
+		if members.length
+			.tile: table.table.table-striped
+				col(width='25%')
+				thead.panel-heading
+					tr
+						th Name
+						th Have
+						th Want
+						th.hidden-xs Free
+						th.hidden-xs Paid
+						th.hidden-xs Swap
+				tbody
+					each member in members
+						tr
+							td
+								a(href=member.url).media
+									.pull-left: img(src=member.photo.exists ? member._.photo.thumbnail(80,80) : member.avatarUrl || '/images/avatar.png', width=40, height=40, alt=member.name.ful).img-responsive.img-circle
+									.media-body= member.name.full
+							td= member.mentoring.have
+							td= member.mentoring.want
+							td.hidden-xs!= member.mentoring.free ? '<span class="entypo entypo-check"></span>' : null
+							td.hidden-xs!= member.mentoring.paid ? '<span class="entypo entypo-check"></span>' : null
+							td.hidden-xs!= member.mentoring.swap ? '<span class="entypo entypo-check"></span>' : null
+		else
+			h3.text-muted There are no mentors yet.
