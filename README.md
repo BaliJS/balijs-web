@@ -1,8 +1,6 @@
 bali.js.com
 =========
 
-## Link
-
 ### Staging
 
 https://balijs-site.herokuapp.com/
