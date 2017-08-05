@@ -3,11 +3,11 @@ bali.js.com
 
 ### Staging
 
-https://balijs-site.herokuapp.com/
+TBA
 
 ### Production
 
-https://bali.js.org/
+TBA
 
 
 ## The BaliJS Website.
