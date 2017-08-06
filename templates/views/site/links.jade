@@ -8,7 +8,7 @@ block intro
 		if data.tag
 			p.lead Tutorials, Libraries, Frameworks and blog posts under <strong>#{data.tag.name}</strong>
 		else
-			p.lead Tutorials, Libraries, Frameworks and blog posts mentioned in SydJS talks, or just of general usefulness.
+			p.lead Tutorials, Libraries, Frameworks and blog posts mentioned in BaliJS talks, or just of general usefulness.
 		//- .buttons
 			if !user
 				a(href='/join').btn.btn-primary Join BaliJS
@@ -32,7 +32,7 @@ block content
 							h3.text-muted No links in the tag #{data.tag.name}.
 						else
 							h3.text-muted There are no links yet.
-			
+
 			.col-sm-3
 				h5.text-muted Sort by
 				p: small
