@@ -6,7 +6,7 @@ block intro
 	.page-intro: .container
 		h1.page-title=data.category ? data.category.name : 'Blog'
 		p.lead
-			| This is the blog of SydJS, contributed by our members and guest authors.&nbsp;
+			| This is the blog of BaliJS, contributed by our members and guest authors.&nbsp;
 			a(href='/join').js-auth-trigger Join now
 			| &nbsp;to contribute.
 
@@ -26,7 +26,7 @@ block content
 							h3.text-muted No posts in the category #{data.category.name}.
 						else
 							h3.text-muted There are no posts yet.
-			
+
 			if data.categories.length
 				.col-md-2
 					if data.categories.length
