@@ -1,9 +1,19 @@
-sydjs.com
+bali.js.com
 =========
 
-## The SydJS Website.
+### Staging
 
-Initially built in two and a half days by the team at [Thinkmill](http://www.thinkmill.com.au) as a demo of what [KeystoneJS](http://keystonejs.com) can do, it's now a showcase for the Sydney Javascript community.
+TBA
+
+### Production
+
+TBA
+
+
+## The BaliJS Website.
+
+This site is a fork of [SydJS](https://github.com/JedWatson/sydjs-site) website created using [KeystoneJS](http://keystonejs.com) from [Thinkmill](http://www.thinkmill.com.au).
+After a couple of research, we decide that we are going to use [KeystoneJS](http://keystonejs.com) for the Bali Javascript community site.
 
 ## Get Involved!
 
@@ -24,7 +34,7 @@ We have generally followed the guidelines set out in [AirBnB's Javascript Style 
 
 ## Getting Started
 
-To run the SydJS site locally, there are a few things to set up.
+To run the BaliJS site locally, there are a few things to set up.
 
 Because we have some private keys for our MongoDB, Cloudinary and Mandrill accounts, you'll need to set up your own equivalents before the site will run properly.
 
@@ -38,7 +48,7 @@ You'll also need MongoDB 2.4.x - if you're on a Mac, the easiest way is to insta
 
 If you're on a Mac you'll also need Xcode and the Command Line Tools installed or the build process won't work.
 
-### Setting up your copy of SydJS
+### Setting up your copy of BaliJS
 
 Get a local copy of the site by cloning this repository, or fork it to work on your own copy.
 
@@ -50,11 +60,11 @@ The only line you **need** to add to your `.env` file is a valid `CLOUDINARY_URL
 
 	CLOUDINARY_URL=cloudinary://12345:abcde@cloudname
 
-### Running SydJS
+### Running BaliJS
 
 Once you've set up your configuration, run `node keystone` to start the server.
 
-By default, [Keystone](http://keystonejs.com) will connect to a new local MongoDB database on your localhost called `sydjs`, and create a new Admin user that you can use to log in with using the email address `user@keystonejs.com` and the password `admin`.
+By default, [Keystone](http://keystonejs.com) will connect to a new local MongoDB database on your localhost called `balijs`, and create a new Admin user that you can use to log in with using the email address `user@keystonejs.com` and the password `admin`.
 
 If you want to run against a different server or database, add a line to your `.env` file to set the `MONGO_URI` environment variable, and restart the site.
 
