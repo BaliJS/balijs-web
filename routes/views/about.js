@@ -6,12 +6,11 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 
 	locals.section = 'about';
-	locals.page.title = 'About SydJS';
+	locals.page.title = 'About BaliJS';
 
 	locals.organisers = [
-		{ name: 'Craig Sharkie', image: '/images/organisers/sharkie_400_round.png', twitter: 'twalve', title: 'Founder, MC, Coordinator', profile: '/member/sharkie' },
-		{ name: 'Jed Watson', image: '/images/organisers/jedwatson_400_round.png', twitter: 'jedwatson', title: 'Community coordinator', profile: '/member/jed-watson' },
-		{ name: 'John van der Loo', image: '/images/organisers/johnvanderloo_400_round.png', twitter: 'geekyjohn', title: 'Atlassian coordinator', profile: '/member/john-van-der-loo' }
+		{ name: 'Adi Setiawan', image: 'https://avatars3.githubusercontent.com/u/73311?v=4&s=400', twitter: 'adisetiawan', title: 'coordinator', profile: '/member/adi-setiawan' },
+		{ name: 'Trimikha Valentius', image: 'https://avatars2.githubusercontent.com/u/890146?v=4', twitter: 'tvalentius', title: 'coordinator', profile: '/member/trimikha-valentius' },
 	]
 
 	view.render('site/about');
