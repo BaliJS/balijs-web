@@ -5,29 +5,29 @@ var keystone = require('keystone'),
 var Meetup = keystone.list('Meetup');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'meetups';
-	locals.page.title = 'Meetups - SydJS';
-	
+	locals.page.title = 'Meetups - BaliJS';
+
 	view.query('upcomingMeetup',
 		Meetup.model.findOne()
 			.where('state', 'active')
 			.sort('-startDate')
 	, 'talks[who]');
-	
+
 	view.query('pastMeetups',
 		Meetup.model.find()
 			.where('state', 'past')
 			.sort('-startDate')
 	, 'talks[who]');
-	
+
 	view.on('render', function(next) {
-	
+
 		if (!req.user || !locals.upcomingMeetup) return next();
-		
+
 		RSVP.model.findOne()
 			.where('who', req.user._id)
 			.where('meetup', locals.upcomingMeetup)
@@ -38,9 +38,9 @@ exports = module.exports = function(req, res) {
 				}
 				return next();
 			});
-			
+
 	});
-	
+
 	view.render('site/meetups');
-	
+
 }
