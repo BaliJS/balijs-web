@@ -4,12 +4,12 @@ var keystone = require('keystone'),
 var User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'members';
-	locals.page.title = 'Members - SydJS';
+	locals.page.title = 'Members - BaliJS';
 
 
 	// Load Organisers
