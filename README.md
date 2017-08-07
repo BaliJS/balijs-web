@@ -38,11 +38,11 @@ To run the BaliJS site locally, there are a few things to set up.
 
 Because we have some private keys for our MongoDB, Cloudinary and Mandrill accounts, you'll need to set up your own equivalents before the site will run properly.
 
-_If you're looking to work on the SydJS site and want access to our accounts, please get in touch_
+_If you're looking to work on the BaliJS site and want access to our accounts, please get in touch_
 
 ### Install Node.js and MongoDB
 
-You'll need node 0.10.x and npm 1.3.x installed to run SydJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
+You'll need node 0.10.x and npm 1.3.x installed to run BaliJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
 
 You'll also need MongoDB 2.4.x - if you're on a Mac, the easiest way is to install [homebrew](http://brew.sh) and then run `brew install mongo`.
 
@@ -68,7 +68,7 @@ By default, [Keystone](http://keystonejs.com) will connect to a new local MongoD
 
 If you want to run against a different server or database, add a line to your `.env` file to set the `MONGO_URI` environment variable, and restart the site.
 
-When it's all up and running, you should see the message `SydJS is ready on port 3000` and you'll be able to browse the site on [localhost:3000](http://localhost:3000).
+When it's all up and running, you should see the message `BaliJS is ready on port 3000` and you'll be able to browse the site on [localhost:3000](http://localhost:3000).
 
 ### Facebook login
 Add `FACEBOOK_API=X.x` in your .env file.
