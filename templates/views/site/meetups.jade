@@ -5,13 +5,13 @@ block intro
 	.container-sm
 		.page-intro
 			h1.page-title Meetups
-			p.lead We usually meet up the 3rd Wednesday of every month. We hope to see you at 
+			p.lead We usually meet up the 3rd Wednesday of every month. We hope to see you at
 				if !user
 					a(href='/join').js-auth-trigger our&nbsp;next&nbsp;meetup
 				else
 					| our next meetup
 				| . Stay in the loop - 
-				a(href='http://twitter.com/sydjs', target='_blank') follow us on twitter
+				a(href='http://twitter.com/balijavascript', target='_blank') follow us on twitter
 
 		if upcomingMeetup
 			+meetup(upcomingMeetup)
@@ -28,7 +28,7 @@ block content
 						h4= meetup.name
 						!=utils.cropString( utils.htmlToText(meetup.description), 240, '...', true )
 						//- !=utils.htmlToText(meetup.description)
-		
+
 		if !upcomingMeetup && !pastMeetups.length
 			h3.text-muted There are no meetups yet.
 
