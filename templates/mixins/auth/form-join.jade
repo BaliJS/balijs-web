@@ -1,17 +1,17 @@
 //-
 	Join
 	------------------------------
-	
+
 	Args
 	* modal  - boolean
 	* initial [default "join"] - accepts "signin" | "join" | "password"
-	
+
 mixin form-join(args)
 	.auth-box.modal-pane-join(class=args.modal && args.initial != 'join' ? 'hidden' : null)
 		if args.modal
 			.modal-header
 				button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
-				h4.modal-title Join SydJS
+				h4.modal-title Join BaliJS
 		div(class=args.modal ? 'modal-body' : null)
 			include ../../includes/social-signin
 			p.auth-form-divider: span.auth-form-divider-text or
@@ -24,13 +24,13 @@ mixin form-join(args)
 						.flash-messages
 							.alert.alert-danger
 								div!= form.error.message || form.error
-								
+
 								//- Field Errors
 								if form.error.errors && !_.isEmpty(form.error.errors)
 									ul
 										each error, key in form.error.errors
 											li!= error.msg
-					
+
 					- var checkFormError = function(key) { return form.error && form.error.errors && form.error.errors[key] ? 'has-error' : null }
 				.form-groups
 					.form-group(class=!args.modal ? checkFormError('firstname') : null)
@@ -49,7 +49,7 @@ mixin form-join(args)
 						label(for='website').sr-only Website (optional)
 						input(type='website', name='website', placeholder='Website (optional)', value=!args.modal ? form.website : null).form-control.form-control--last
 				button(type='submit').btn.btn-block.btn-primary.btn-submit Join
-		
+
 			p.text-center.text-muted.mt-3
-				| Already have an account? 
+				| Already have an account?
 				a(href=args.modal ? js : '/signin', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'signin' : null) Sign in
