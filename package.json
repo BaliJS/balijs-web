@@ -1,10 +1,10 @@
 {
-  "name": "sydjs-site",
+  "name": "balijs-site",
   "version": "3.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/sydjs-site.git"
+    "url": "https://github.com/BaliJS/balijs-web"
   },
   "dependencies": {
     "async": "1.5.2",
