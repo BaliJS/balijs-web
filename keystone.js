@@ -75,7 +75,7 @@ keystone.set('email locals', {
 	utils: keystone.utils,
 	host: (function() {
 		if (keystone.get('env') === 'staging') return 'http://balijs-site.herokuapp.com';
-		if (keystone.get('env') === 'production') return 'http://www.bali.js.org';
+		if (keystone.get('env') === 'production') return 'http://www.balijs.com';
 		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '3000');
 	})()
 });
