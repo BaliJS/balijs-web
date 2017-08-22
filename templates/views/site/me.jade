@@ -7,12 +7,12 @@ block flash-messages
 block content
 	.container-sm
 		.page-intro
-			p.lead Hi #{user.name.first}, these are your settings and 
+			p.lead Hi #{user.name.first}, these are your settings and
 				a(href=user.url) profile details
 			//- if nextMeetup
-				.alert.alert-info 
+				.alert.alert-info
 					span.entypo.entypo-calendar
-					|  The next meetup has been announced - 
+					|  The next meetup has been announced -
 					a(href=nextMeetup.url).alert-link= nextMeetup._.startDate.format('dddd D MMM YYYY')
 		.page-content.tile.ph-2.pv-2.mb-2
 			+flash-messages(messages)
@@ -38,11 +38,11 @@ block content
 							|  When there is a new post
 				hr.mv-2
 				h3 Your Services
-				p.help-block.mb-2 You can authenticate yourself on the SydJS website with any of the services you connect. When connected, links to your Twitter and Github will be displayed on your profile.
-				
-				
+				p.help-block.mb-2 You can authenticate yourself on the BaliJS website with any of the services you connect. When connected, links to your Twitter and Github will be displayed on your profile.
+
+
 				//- Unconfigured Services
-				
+
 				if !user.services.github.isConfigured
 					.form-group
 						label.col-sm-2.control-label Github
@@ -71,10 +71,10 @@ block content
 							a(href='/auth/facebook', title='Connect your Google account').btn.btn-facebook
 								span.entypo-social.entypo-facebook
 								|  Connect your Facebook account
-				
-				
+
+
 				//- Configured Services
-				
+
 				if user.services.github.isConfigured || user.services.twitter.isConfigured || user.services.google.isConfigured || user.services.facebook.isConfigured
 					hr.line-dashed
 				if user.services.github.isConfigured
@@ -82,33 +82,33 @@ block content
 						label.col-sm-2.control-label Github
 						.col-sm-10.text-muted.faux-label
 							span.entypo-social.entypo-github
-							|  Your account is connected. 
+							|  Your account is connected.
 							a(href='?disconnect=github', title='Revoke authorization of your Github account') Disconnect
 				if user.services.twitter.isConfigured
 					.form-group
 						label.col-sm-2.control-label Twitter
 						.col-sm-10.text-muted.faux-label
 							span.entypo-social.entypo-twitter
-							|  Your account is connected. 
+							|  Your account is connected.
 							a(href='?disconnect=twitter', title='Revoke authorization of your Twitter account') Disconnect
 				if user.services.google.isConfigured
 					.form-group
 						label.col-sm-2.control-label Google
 						.col-sm-10.text-muted.faux-label
 							span.entypo-social.entypo-google-circles
-							|  Your account is connected. 
+							|  Your account is connected.
 							a(href='?disconnect=google', title='Revoke authorization of your Google account') Disconnect
 				if user.services.facebook.isConfigured
 					.form-group
 						label.col-sm-2.control-label Facebook
 						.col-sm-10.text-muted.faux-label
 							span.entypo-social.entypo-facebook
-							|  Your account is connected. 
+							|  Your account is connected.
 							a(href='?disconnect=facebook', title='Revoke authorization of your Facebook account') Disconnect
-				
+
 
 				//- Public Info
-				
+
 				hr.mv-2
 				h3 Public Info
 				.form-group
@@ -116,7 +116,7 @@ block content
 					.col-sm-10
 						label.checkbox-inline
 							input(type='checkbox', name='isPublic', value='true', checked=user.isPublic ? 'true' : null)
-							|  Show my profile on the SydJS website
+							|  Show my profile on the BaliJS website
 				.form-group
 					label.col-sm-2.control-label Website
 					.col-sm-10: input(type='text', name='website' value=user.website).form-control
@@ -126,7 +126,7 @@ block content
 						.text-muted (markdown)
 					.col-sm-10
 						textarea(name='bio', rows=5).form-control=user.bio.md
-				
+
 				.form-group
 					label.col-sm-2.control-label Photo
 					.col-sm-10
@@ -164,7 +164,7 @@ block content
 							input(type='text', name='mentoring.want', placeholder='eg; HTML, CSS', value= user.mentoring.want).form-control
 				hr.mv-2
 				button(type='submit', data-loading-text="Saving...").btn.btn-primary Save profile
-						
+
 		.ui-reveal
 			.ui-reveal__initial
 				button(type='button').btn.btn-link.ui-reveal__trigger Change Password
@@ -180,6 +180,6 @@ block content
 						input(type='password', name='password_confirm', placeholder='Confirm Password', id='signin-passwordConfirm').form-control
 					.form-group
 						button(type='submit', data-loading-text="Changing...").btn.btn-primary Change
-							
+
 block js
 	script(src='/js/views/me.js')

@@ -5,10 +5,10 @@ var Meetup = keystone.list('Meetup'),
 	User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'tools';
 	locals.nextMeetup = false;
 
@@ -23,10 +23,10 @@ exports = module.exports = function(req, res) {
 
 
 	// Get all subscribers
-	
+
 	view.query('subscribers', User.model.find().where('notifications.meetups', true));
 
-	
+
 	// Get the next meetup
 
 	view.on('init', function(next) {
@@ -34,7 +34,7 @@ exports = module.exports = function(req, res) {
 			.where('state', 'active')
 			.sort('-startDate')
 			.exec(function(err, meetup) {
-			
+
 				if (err) {
 					console.error("===== Error loading next meetup =====");
 					console.error(err);
@@ -50,7 +50,7 @@ exports = module.exports = function(req, res) {
 			});
 	});
 
-	
+
 	// Notify next meetup attendees
 
 	view.on('post', { action: 'notify.attendee' }, function(next) {
@@ -71,7 +71,7 @@ exports = module.exports = function(req, res) {
 		}
 	});
 
-	
+
 	// Notify all SydJS subscribers
 
 	view.on('post', { action: 'notify.subscriber' }, function(next) {
@@ -82,14 +82,14 @@ exports = module.exports = function(req, res) {
 			async.each(locals.subscribers, function(subscriber, doneSubscriber) {
 				new keystone.Email('member-notification').send({
 					subscriber: subscriber,
-					subject: req.body.subscriber_email_subject || 'Notification from SydJS',
+					subject: req.body.subscriber_email_subject || 'Notification from BaliJS',
 					content: req.body.subscriber_email_content,
 					link_label: req.body.subscriber_email_link_label,
 					link_url: req.body.subscriber_email_link_url,
 					to: subscriber.email,
 					from: {
-						name: 'SydJS',
-						email: 'hello@sydjs.com'
+						name: 'BaliJS',
+						email: 'hello@balijs.com'
 					}
 				}, doneSubscriber);
 			}, function(err) {
@@ -105,7 +105,7 @@ exports = module.exports = function(req, res) {
 		}
 	});
 
-	
+
 	// Populate the RSVPs for counting
 
 	view.on('render', function(next) {
@@ -114,9 +114,9 @@ exports = module.exports = function(req, res) {
 		} else {
 			next();
 		}
-		
+
 	});
-	
+
 	view.render('tools/notification-center');
-	
+
 }

@@ -4,10 +4,10 @@ var keystone = require('keystone'),
 var User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'members';
 	locals.moment = moment;
 
@@ -28,16 +28,16 @@ exports = module.exports = function(req, res) {
 		});
 	});
 
-	
+
 	// Set the page title and populate related documents
-	
+
 	view.on('render', function(next) {
 		if (locals.member) {
-			locals.page.title = locals.member.name.full + ' - SydJS';
+			locals.page.title = locals.member.name.full + ' - BaliJS';
 			locals.member.populateRelated('posts talks[meetup]', next);
 		}
 	});
-	
+
 	view.render('site/member');
 
 }
