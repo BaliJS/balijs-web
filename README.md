@@ -1,4 +1,4 @@
-bali.js.com
+balijs.com
 =========
 
 ### Staging
@@ -10,7 +10,7 @@ https://balijs-site.herokuapp.com
 http://www.balijs.com/
 
 
-## The BaliJS Website.
+## BaliJS Website.
 
 This site is a fork of [SydJS](https://github.com/JedWatson/sydjs-site) website created using [KeystoneJS](http://keystonejs.com) from [Thinkmill](http://www.thinkmill.com.au).
 After a couple of research, we decide that we are going to use [KeystoneJS](http://keystonejs.com) for the Bali Javascript community site.
