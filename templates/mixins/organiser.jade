@@ -3,7 +3,7 @@ mixin organiser(org)
 		.organiser__header
 			a(href=org.profile)
 				.img-wrapper
-					img(src=org.image, alt='SydJS organiser - ' + org.name).img-circle
+					img(src=org.image, alt='BaliJS organiser - ' + org.name).img-circle
 			h4.organiser__name=org.name
 			p.organiser__title=org.title
 			p.organiser__twitter: a(href='https://twitter.com/' + org.twitter, target='_blank') @#{org.twitter}
