@@ -42,7 +42,8 @@ _If you're looking to work on the BaliJS site and want access to our accounts, p
 
 ### Install Node.js and MongoDB
 
-You'll need node 0.10.x and npm 1.3.x installed to run BaliJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
+You'll need node 0.10.x and 
+1.3.x installed to run BaliJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
 
 You'll also need MongoDB 2.4.x - if you're on a Mac, the easiest way is to install [homebrew](http://brew.sh) and then run `brew install mongo`.
 
@@ -52,7 +53,7 @@ If you're on a Mac you'll also need Xcode and the Command Line Tools installed o
 
 Get a local copy of the site by cloning this repository, or fork it to work on your own copy.
 
-Then run `npm install` to download the dependencies.
+Then run `npm install` or `yarn install` to download the dependencies.
 
 Before you continue, create a file called `.env` in the root folder of the project (this will be ignored by git). This file is used to emulate the environment config of our production server, in development. Any `key=value` settings you put in there (one on each line) will be set as environment variables in `process.env`.
 
