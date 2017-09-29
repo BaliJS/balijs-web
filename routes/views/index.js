@@ -13,6 +13,7 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	locals.meetup = {};
 	locals.page.title = 'Welcome to BaliJS';
+	locals.page.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
 	locals.rsvpStatus = {};
 
