@@ -42,7 +42,7 @@ _If you're looking to work on the BaliJS site and want access to our accounts, p
 
 ### Install Node.js and MongoDB
 
-You'll need node 0.10.x and 
+You'll need node 0.10.x and
 1.3.x installed to run BaliJS. The easiest way is to download the installers from [nodejs.org](http://nodejs.org).
 
 You'll also need MongoDB 2.4.x - if you're on a Mac, the easiest way is to install [homebrew](http://brew.sh) and then run `brew install mongo`.
