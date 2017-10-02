@@ -28,6 +28,17 @@ exports = module.exports = function(req, res) {
 	);
 
 	view.on('post', { action: 'profile.details' }, function(next) {
+		if (!('mentoring.available' in req.body)) req.body['mentoring.available'] = false;
+		if (!('mentoring.paid' in req.body)) req.body['mentoring.paid'] = false;
+		if (!('mentoring.swap' in req.body)) req.body['mentoring.swap'] = false;
+		if (!('mentoring.free' in req.body)) req.body['mentoring.free'] = false;
+		if (!('isPublic' in req.body)) req.body['isPublic'] = false;
+		if (!('notifications.meetups' in req.body)) req.body['notifications.meetups'] = false;
+		if (!('notifications.posts' in req.body)) req.body['notifications.posts'] = false;
+
+		req.body['mentoring.paid'] = req.body['mentoring.paid'] && req.body['mentoring.available'];
+		req.body['mentoring.swap'] = req.body['mentoring.swap'] && req.body['mentoring.available'];
+		req.body['mentoring.free'] = req.body['mentoring.free'] && req.body['mentoring.available'];
 
 		req.user.getUpdateHandler(req).process(req.body, {
 			fields: 'name, email, notifications.meetups, notifications.posts,' +
