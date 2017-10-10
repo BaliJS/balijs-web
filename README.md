@@ -1,4 +1,4 @@
-balijs.com
+Balijs.com
 =========
 
 ### Staging
@@ -29,4 +29,4 @@ If you are part of another meetup group and want to use our site as a basis for 
 
 Contributions are always welcome, no matter how large or small.
 
-see CONTRIBUTING.md for more details .
+see [Contributing](CONTRIBUTING.md) for more details .
