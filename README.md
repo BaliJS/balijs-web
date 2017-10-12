@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="http://www.balijs.com/">
-    <img alt="logo" src="https://raw.githubusercontent.com/BaliJS/balijs-web/public/public/images/balijs-full.png?raw=true" width="546">
+    <img alt="logo" src="https://raw.githubusercontent.com/BaliJS/balijs-web/public/public/images/balijs-full.jpg?raw=true" width="546">
   </a>
 </p>
 
