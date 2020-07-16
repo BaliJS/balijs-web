@@ -27,7 +27,7 @@
     "jade": "1.11.0",
     "keystone": "https://github.com/keystonejs/keystone.git#f3083c",
     "lodash": "4.17.19",
-    "moment": "2.12.0",
+    "moment": "2.27.0",
     "newrelic": "1.26.2",
     "passport": "0.3.2",
     "passport-facebook": "2.1.1",
